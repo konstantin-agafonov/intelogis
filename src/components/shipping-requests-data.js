@@ -1,6 +1,6 @@
 const shippingRequestsData = [
     {
-        id: 1,
+        key: 1,
         from: {
             lat: 59.84660399,
             lng: 30.29496392,
@@ -11,7 +11,7 @@ const shippingRequestsData = [
         }
     },
     {
-        id: 2,
+        key: 2,
         from: {
             lat: 59.82934196,
             lng: 30.42423701,
@@ -22,7 +22,7 @@ const shippingRequestsData = [
         }
     },
     {
-        id: 3,
+        key: 3,
         from: {
             lat: 59.83567701,
             lng: 30.38064206,
@@ -33,7 +33,7 @@ const shippingRequestsData = [
         }
     },
     {
-        id: 4,
+        key: 4,
         from: {
             lat: 59.84660399,
             lng: 30.29496392,
