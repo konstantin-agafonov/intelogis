@@ -1,16 +1,18 @@
 import { Table } from "antd";
 import { useSelector, useDispatch } from 'react-redux';
 import shippingRequestsTableColumnsConfig from './shippingRequestsTable.columns-config';
+import {setCurrentRequest} from "../redux/reducers/shippingMap.reducer";
 
 const ShippingRequestsTable = () => {
-    const shippingRequestsData_from_redux = useSelector((state) => state.shippingRequestsTable.requestsData);
+    const shippingRequestsData = useSelector(state => state.shippingRequestsTable.requestsData);
+    const dispatch = useDispatch();
 
     const onShippingRequestClick = (event,record,rowIndex) => {
-        console.log(event,record,rowIndex);
+        dispatch(setCurrentRequest(record));
     }
 
     return <Table
-        dataSource={shippingRequestsData_from_redux}
+        dataSource={shippingRequestsData}
         columns={shippingRequestsTableColumnsConfig}
         pagination={{
             position: ['none','none']

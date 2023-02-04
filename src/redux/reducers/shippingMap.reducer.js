@@ -1,33 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    currentRoute: {},
-}
+    currentRequest: {
+        key: 0,
+        from: {
+            lat: 0,
+            lng: 0,
+        },
+        to: {
+            lat: 0,
+            lng: 0,
+        },
+    },
+};
 
 export const shippingMapSlice = createSlice({
     name: 'shippingMap',
     initialState,
     reducers: {
-        /*increment: (state) => {
-            // Redux Toolkit allows us to write "mutating" logic in reducers. It
-            // doesn't actually mutate the state because it uses the Immer library,
-            // which detects changes to a "draft state" and produces a brand new
-            // immutable state based off those changes
-            state.value += 1
+        clearCurrentRequest: (state) => {
+            state.currentRequest = {};
         },
-        decrement: (state) => {
-            state.value -= 1
-        },
-        incrementByAmount: (state, action) => {
-            state.value += action.payload
-        },*/
-        clearCurrentRoute: (state) => {
-            state.currentRoute = {};
+        setCurrentRequest: (state,action) => {
+            state.currentRequest = action.payload;
         },
     },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const { /*increment, decrement, incrementByAmount*/ clearCurrentRoute } = shippingMapSlice.actions
+export const { setCurrentRequest, clearCurrentRequest } = shippingMapSlice.actions;
 
-export default shippingMapSlice.reducer
+export default shippingMapSlice.reducer;
