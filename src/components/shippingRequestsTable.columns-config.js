@@ -1,7 +1,6 @@
-import shippingRequestsData from "./shipping-requests-data";
-import {Space, Table} from "antd";
+import {Space} from "antd";
 
-const columns = [
+const shippingRequestsTableColumnsConfig = [
     {
         title: 'Номер заявки',
         key: 'key',
@@ -31,26 +30,4 @@ const columns = [
     },
 ];
 
-const ShippingRequestsTable = () => {
-    const onShippingRequestClick = (event,record,rowIndex) => {
-        console.log(event,record,rowIndex);
-    }
-
-    return <Table
-        dataSource={shippingRequestsData}
-        columns={columns}
-        pagination={{
-            position: ['none','none']
-        }}
-        bordered={true}
-        onRow={(record, rowIndex) => {
-            return {
-                onClick: (event) => {
-                    onShippingRequestClick(event,record,rowIndex);
-                },
-            };
-        }}
-    />
-}
-
-export default ShippingRequestsTable;
+export default shippingRequestsTableColumnsConfig;

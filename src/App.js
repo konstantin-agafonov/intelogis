@@ -1,6 +1,6 @@
-import ShippingRequestsTable from "./components/shipping-requests-table.component";
 import {Row,Col} from "antd";
-import ShippingMap from "./components/shipping-map.component";
+import ShippingRequestsTable from "./components/shippingRequestsTable.component";
+import ShippingMap from "./components/shippingMap.component";
 
 function App() {
   return (
