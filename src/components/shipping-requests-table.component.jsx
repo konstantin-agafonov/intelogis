@@ -32,8 +32,8 @@ const columns = [
 ];
 
 const ShippingRequestsTable = () => {
-    const onShippingRequestClick = (event) => {
-        console.log(event);
+    const onShippingRequestClick = (event,record,rowIndex) => {
+        console.log(event,record,rowIndex);
     }
 
     return <Table
@@ -42,9 +42,12 @@ const ShippingRequestsTable = () => {
         pagination={{
             position: ['none','none']
         }}
+        bordered={true}
         onRow={(record, rowIndex) => {
             return {
-                onClick: onShippingRequestClick,
+                onClick: (event) => {
+                    onShippingRequestClick(event,record,rowIndex);
+                },
             };
         }}
     />
