@@ -1,11 +1,12 @@
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { useSelector, useDispatch } from 'react-redux';
-import {Space} from "antd";
+import { Space } from "antd";
 
 
 const ShippingMap = () => {
     const currentRequest = useSelector(state => state.shippingMap.currentRequest);
+    const currentRoute = useSelector(state => state.shippingMap.currentRoute);
 
     return (
         <>

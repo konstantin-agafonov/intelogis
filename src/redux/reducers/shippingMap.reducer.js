@@ -12,6 +12,7 @@ const initialState = {
             lng: 0,
         },
     },
+    currentRoute: {},
 };
 
 export const shippingMapSlice = createSlice({
@@ -24,10 +25,13 @@ export const shippingMapSlice = createSlice({
         setCurrentRequest: (state,action) => {
             state.currentRequest = action.payload;
         },
+        setCurrentRoute: (state,action) => {
+            state.currentRoute = action.payload;
+        },
     },
 });
 
 // Action creators are generated for each case reducer function
-export const { setCurrentRequest, clearCurrentRequest } = shippingMapSlice.actions;
+export const { setCurrentRequest, clearCurrentRequest, setCurrentRoute } = shippingMapSlice.actions;
 
 export default shippingMapSlice.reducer;
