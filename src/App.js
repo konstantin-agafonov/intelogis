@@ -1,5 +1,6 @@
 import ShippingRequestsTable from "./components/shipping-requests-table.component";
 import {Row,Col} from "antd";
+import ShippingMap from "./components/shipping-map.component";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
           <ShippingRequestsTable/>
         </Col>
         <Col md={24} lg={12}>
-            col 2
+          <ShippingMap/>
         </Col>
       </Row>
     </div>
