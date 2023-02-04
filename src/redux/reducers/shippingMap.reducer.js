@@ -12,7 +12,7 @@ const initialState = {
             lng: 0,
         },
     },
-    currentRoute: {},
+    currentRoute: '',
 };
 
 export const shippingMapSlice = createSlice({
@@ -26,7 +26,7 @@ export const shippingMapSlice = createSlice({
             state.currentRequest = action.payload;
         },
         setCurrentRoute: (state,action) => {
-            state.currentRoute = action.payload;
+            state.currentRoute = action.payload.routes[0].geometry.coordinates.map(coordinate=>[coordinate[1],coordinate[0]]);
         },
     },
 });

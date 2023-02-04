@@ -1,7 +1,8 @@
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
-import { useSelector, useDispatch } from 'react-redux';
+import { MapContainer, TileLayer, Marker, Polyline } from 'react-leaflet';
+import { useSelector } from 'react-redux';
 import { Space } from "antd";
+/*import {Marker, Polyline} from "leaflet/dist/leaflet-src.esm";*/
 
 
 const ShippingMap = () => {
@@ -20,6 +21,13 @@ const ShippingMap = () => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
+                { currentRoute ?
+                    <>
+                        <Marker position={[currentRequest.from.lat,currentRequest.from.lng]} />
+                        <Marker position={[currentRequest.to.lat,currentRequest.to.lng]} />
+                        <Polyline pathOptions={{color:'red'}} positions={currentRoute} />
+                    </>
+                : '' }
             </MapContainer>
             <Space>
                 <span>Current request is:</span>
